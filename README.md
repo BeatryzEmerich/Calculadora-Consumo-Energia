@@ -45,3 +45,66 @@ Bia ⬅️
 
 Feedback e contribuições são sempre bem-vindos. Sinta-se à vontade para relatar problemas, fazer melhorias ou contribuir para este projeto.
 
+``` mermaid
+classDiagram
+    class ViewWelcome {
+        +createAndShowWelcomeView()
+        +openCalculoView()
+    }
+    class ViewCalculo {
+        -JTextField txtItem
+        -JTextField txtPotencia
+        -JTextField txtValorKwh
+        -JTextField txtTempoUso
+        -Calculo calculo
+        +ViewCalculo()
+        -initComponents()
+        +calcular()
+    }
+    class Calculo {
+        +calculoConsumoEnergia(double potencia, double tempoUso, double precoKwh, String nomeItem)
+    }
+    class JFrame {
+        +setSize(int width, int height)
+        +setVisible(boolean visible)
+    }
+    class JButton {
+        +addActionListener(ActionListener listener)
+        +setFont(Font font)
+        +setBounds(int x, int y, int width, int height)
+        +setBackground(Color color)
+        +setCursor(Cursor cursor)
+        +setToolTipText(String text)
+    }
+    class JLabel {
+        +setForeground(Color color)
+        +setFont(Font font)
+        +setBounds(int x, int y, int width, int height)
+    }
+    class JPanel {
+        +setBackground(Color color)
+        +setBounds(int x, int y, int width, int height)
+    }
+    class JTextField {
+        +setColumns(int columns)
+        +setBounds(int x, int y, int width, int height)
+    }
+    class JTextArea {
+        +setBounds(int x, int y, int width, int height)
+        +setEditable(boolean editable)
+    }
+    class JOptionPane {
+        +showMessageDialog(Component parentComponent, Object message)
+    }
+    ViewWelcome --|> JFrame
+    ViewWelcome --|> JButton
+    ViewWelcome --|> JTextArea
+    ViewCalculo --|> JFrame
+    ViewCalculo --|> JPanel
+    ViewCalculo --|> JTextField
+    ViewCalculo --|> JButton
+    ViewCalculo --|> JLabel
+    Calculo --|> JOptionPane
+    ViewCalculo --|> Calculo
+    ViewWelcome --|> ViewCalculo
+```
