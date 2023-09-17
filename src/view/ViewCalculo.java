@@ -68,7 +68,7 @@ public class ViewCalculo extends JFrame {
 		txtPotencia.setBounds(148, 164, 110, 29);
 		getContentPane().add(txtPotencia);
 
-		JLabel lbValorKwh = new JLabel("Valor (Kwh):");
+		JLabel lbValorKwh = new JLabel("Valor (kWh):");
 		lbValorKwh.setToolTipText("Você pode encontrar o valor na sua conta de luz");
 		lbValorKwh.setFont(new Font("Bahnschrift", Font.PLAIN, 16));
 		lbValorKwh.setBounds(24, 133, 101, 20);
@@ -85,9 +85,8 @@ public class ViewCalculo extends JFrame {
 		btnCalculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Calculo calculo = new Calculo();
-				double potencia = Double.parseDouble(txtPotencia.getText());
 				try {
-					double potencia2 = Double.parseDouble(txtPotencia.getText());
+					double potencia = Double.parseDouble(txtPotencia.getText());
 					double tempoUso = Double.parseDouble(txtTempoUso.getText());
 					double precoKwh = Double.parseDouble(txtValorKwh.getText());
 					String nomeItem = txtItem.getText();
