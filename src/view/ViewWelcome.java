@@ -16,7 +16,6 @@ import javax.swing.border.Border;
 public class ViewWelcome {
 
 	public static void main(String[] args) {
-		// Define o Look and Feel "Metal" antes de criar a janela
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 		} catch (Exception e) {
@@ -27,7 +26,6 @@ public class ViewWelcome {
 			createAndShowWelcomeView();
 		});
 	}
-
 	/**
 	 * @wbp.parser.entryPoint
 	 */
