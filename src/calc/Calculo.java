@@ -13,7 +13,7 @@ public class Calculo {
 			double consumoDiario = (potencia / 1000.0) * tempoUso * precoKwh;
 			double consumoMensal = consumoDiario * 30.0;
 			double consumoSeisMeses = consumoDiario * 60.0;
-			double consumoAnual = consumoSeisMeses * 2;
+			double consumoAnual = consumoDiario * 365.0;
 
 			DecimalFormat formatoMoeda = new DecimalFormat("#.##");
 			String valorMensalFormatado = formatoMoeda.format(consumoMensal);
